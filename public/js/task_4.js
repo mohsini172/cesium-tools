@@ -6,14 +6,16 @@ function task4(event) {
 		url: '//assets.agi.com/stk-terrain/world'
 	});
 
+	clearScreen(scene);
+
 	var cartesian = viewer.camera.pickEllipsoid(mousePosition, ellipsoid);
 	if (cartesian) {
 		var cartographic = ellipsoid.cartesianToCartographic(cartesian);
 		var longitude = parseFloat(Cesium.Math.toDegrees(cartographic.longitude).toFixed(5));
 		var latitude = parseFloat(Cesium.Math.toDegrees(cartographic.latitude).toFixed(5));
 		var positions = [];
-		for (var i = longitude - 5; i < longitude + 5; i++) {
-			for (var j = latitude - 5; j < latitude + 5; j++) {
+		for (var i = longitude - 0.01; i < longitude + 0.01; i += 0.002) {
+			for (var j = latitude - 0.01; j < latitude + 0.01; j += 0.002) {
 				var latlong = Cesium.Cartographic.fromDegrees(i, j);
 				positions.push(latlong);
 			}
@@ -21,26 +23,19 @@ function task4(event) {
 
 		var promise = Cesium.sampleTerrain(terrainProvider, 11, positions);
 		Cesium.when(promise, function (updatedPositions) {
-			console.log("working")
-			info_box.style.display = "block";
-			info_box.style.left = event.pageX;
-			info_box.style.top = event.pageY;
-			info_box.innerHTML = "Longitude : " + longitude + "<br>" + "Latitude :<br>" + latitude + "<br>" + "Altitude :<br>" + positions[0].height;
-
-
-			// updatedPositions is just a reference to positions.
+			var stats = getStats(positions);
+			console.log(stats);
 		});
-
-
+		var color = Cesium.Color.fromBytes(154, 205, 50, 110);
 		scene.primitives.add(new Cesium.Primitive({
 			geometryInstances: new Cesium.GeometryInstance({
 				geometry: new Cesium.RectangleGeometry({
-					rectangle: Cesium.Rectangle.fromDegrees(longitude - 0.5, latitude - 0.5, longitude + 0.5, latitude + 0.5),
+					rectangle: Cesium.Rectangle.fromDegrees(longitude - 0.01, latitude - 0.01, longitude + 0.01, latitude + 0.01),
 					height: 100,
 					vertexFormat: Cesium.PerInstanceColorAppearance.VERTEX_FORMAT
 				}),
 				attributes: {
-					color: Cesium.ColorGeometryInstanceAttribute.fromColor(Cesium.Color.BLUE)
+					color: Cesium.ColorGeometryInstanceAttribute.fromColor(color)
 				}
 			}),
 			appearance: new Cesium.PerInstanceColorAppearance()
@@ -48,5 +43,47 @@ function task4(event) {
 
 	} else {
 		alert('Globe was not picked');
+	}
+}
+
+
+function clearScreen(scene) {
+	// First, remove all dataSources.  Removing a dataSource will
+	// automatically remove its associated entities & primitives.
+	viewer.dataSources.removeAll();
+
+	// Next, remove any remaining entities that weren't part of a dataSource.
+	viewer.entities.removeAll();
+
+	// Finally, it is safe to remove any remaining primitives, as we can
+	// now be certain they did not belong to any dataSource or entity.
+	scene.primitives.removeAll();
+}
+
+
+function getStats(positions) {
+	var max = 0;
+	var min = Number.POSITIVE_INFINITY;
+	var total = 0;
+	var average = 0;
+	for (var i in positions) {
+		if (positions[i].height > max) {
+			max = positions[i].height;
+		}
+
+		if (positions[i].height < min) {
+			min = positions[i].height;
+		}
+
+		total += positions[i].height;
+	}
+	if (positions.length > 1) {
+		average = total / (positions.length);
+	}
+	return {
+		min: min,
+		max: max,
+		total: total, 
+		average: average
 	}
 }
