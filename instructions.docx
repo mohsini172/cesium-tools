@@ -1,0 +1,16 @@
+My requirement:
+A new request arrives from a customer on Zuul
+The filter will extract the tenancy from the URL (https://xxx.somesite.com.br, where "xxx" is the tenancy)
+The filter will use the tenancy to query the non-SQL table(MOngoDb) and get the IP address that corresponds to the environment of the version the customer is using, Zuul will send the request to the environment, wait for its response and respond back to the customer.
+
+Sample Table:
+Tenancy Product Version Endpoint
+john chips 2.0 10.2.3.5
+Steve choco 1.0 10.6.3.5
+Mark chips 2.0 10.6.5.4
+
+Links:
+ 
+Zuul:
+https://github.com/Netflix/zuul
+
