@@ -7,14 +7,15 @@ var viewer = new Cesium.Viewer('cesiumContainer',{
 	homeButton : false,
 	fullscreenButton : false,
 	navigationHelpButton : false,
-	baseLayerPicker : false,
-	geocoder : false,
+	// baseLayerPicker : false,
+	// geocoder : false,
 	sceneModePicker : false});
 var currentTask = task3;
-viewer.canvas.addEventListener('click',currentTask, false);
 
 
 function changeTask(task){
+	viewer.canvas.removeEventListener('click',currentTask, false);
 	currentTask = task;
+	viewer.canvas.addEventListener('click',currentTask, false);
 }
 
