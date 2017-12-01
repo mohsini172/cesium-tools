@@ -1,0 +1,8 @@
+node_modules/*
+document/*
+bower_components/*
+npm-debug.log
+*.DS_Store
+database/config.json
+images/*
+.vscode/**/*
