@@ -34,4 +34,15 @@ function hideAllDivs() {
 	document.getElementById('task_5').style.display = 'none';
 }
 
+
+var openFile = function (file) {
+	var input = file.target;
+
+	var reader = new FileReader();
+	reader.onload = function () {
+		dataURL = reader.result;
+	};
+	reader.readAsDataURL(input.files[0]);
+};
+
 addPins();
