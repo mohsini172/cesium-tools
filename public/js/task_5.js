@@ -73,7 +73,7 @@ function addPins() {
 				showBackground: true,
 				font: '14px monospace',
 				horizontalOrigin: Cesium.HorizontalOrigin.CENTER,
-				verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+				verticalOrigin: Cesium.VerticalOrigin.TOP,
 				pixelOffset: new Cesium.Cartesian2(15, 0)
 			},
 			billboard: {
@@ -83,15 +83,15 @@ function addPins() {
 				pixelOffset: new Cesium.Cartesian2(0, -50), // default: (0, 0)
 				eyeOffset: new Cesium.Cartesian3(0.0, 0.0, 0.0), // default
 				horizontalOrigin: Cesium.HorizontalOrigin.CENTER, // default
-				verticalOrigin: Cesium.VerticalOrigin.CENTER, // default: CENTER
+				verticalOrigin: Cesium.VerticalOrigin.BOTTOM, // default: CENTER
 				// rotation : Cesium.Math.PI_OVER_FOUR, // default: 0.0
 				alignedAxis: Cesium.Cartesian3.ZERO, // default
-				width: 25, // default: undefined
-				height: 25 // default: undefined
+				// width: 500, // default: undefined
+				// height: 500, // default: undefined
+        sizeInMeters : true
 			}
 		});
 	}
-	viewer.flyTo(pin)
 }
 
 
@@ -111,8 +111,9 @@ function addPin(lat, long, description, imgURL) {
 			verticalOrigin: Cesium.VerticalOrigin.BOTTOM, // default: CENTER
 			// rotation : Cesium.Math.PI_OVER_FOUR, // default: 0.0
 			alignedAxis: Cesium.Cartesian3.ZERO, // default
-			width: 25, // default: undefined
-			height: 25 // default: undefined
+			// width: 500, // default: undefined
+			// height: 500, // default: undefined
+      sizeInMeters : true
 		},
 		label: {
 			show: true,
@@ -124,6 +125,5 @@ function addPin(lat, long, description, imgURL) {
 			pixelOffset: new Cesium.Cartesian2(15, 0)
 		}
 	});
-	viewer.flyTo(pin)
 }
 

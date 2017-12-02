@@ -67,14 +67,18 @@
             <br>Mode
         </button>
         <br>
-        <input type="text" class="text-line animated fadeInDown" id="longitude" />
+        <input type="text" class="text-line animated fadeInDown" id="longitude" placeholder="Longitude" />
         <br>
-        <input type="text" class="text-line_2 animated fadeInDown" id="latitude" />
+        <input type="text" class="text-line_2 animated fadeInDown" id="latitude" placeholder="Latitude" />
         <br>
-        <input type="text" class="text-line animated fadeInDown" id="description_input">
+        <input type="text" class="text-line animated fadeInDown" id="description_input" placeholder="Description">
         <br>
-        <input type='file' accept='image/*' onchange='openFile(event)'><br>
-        <br>
+        <div class="fileinputs">
+        <input type="file" class="file" accept='image/*' onchange='openFile(event)' />
+        <div class="fakefile">
+          <img src="images/picture.png" width="20%" height="20%" />
+        </div>
+      </div>
         <div style="width:205px;padding-top:15px; display: block;margin:0px auto;" class="animted fadeInDown">
             <button onclick="store()" id="blockbutton_5">Store</button>
             <button onclick="travel()" id="blockbutton_4">Go!</button>
