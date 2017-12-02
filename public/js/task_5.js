@@ -61,17 +61,33 @@ function addPins() {
 			position: Cesium.Cartesian3.fromDegrees(locations[i].longitude, locations[i].latitude),
 			billboard: {
 				image: locations[i].imgURL,
-				show : true, // default
-				pixelOffset : new Cesium.Cartesian2(0, -50), // default: (0, 0)
-				eyeOffset : new Cesium.Cartesian3(0.0, 0.0, 0.0), // default
-				horizontalOrigin : Cesium.HorizontalOrigin.CENTER, // default
-				verticalOrigin : Cesium.VerticalOrigin.BOTTOM, // default: CENTER
+				// scaleByDistance : new Cesium.NearFarScalar(1.5e2, 0.01, 1.5e7, 0.001),
+				show: true, // default
+				pixelOffset: new Cesium.Cartesian2(0, -50), // default: (0, 0)
+				eyeOffset: new Cesium.Cartesian3(0.0, 0.0, 0.0), // default
+				horizontalOrigin: Cesium.HorizontalOrigin.CENTER, // default
+				verticalOrigin: Cesium.VerticalOrigin.BOTTOM, // default: CENTER
 				// rotation : Cesium.Math.PI_OVER_FOUR, // default: 0.0
-				alignedAxis : Cesium.Cartesian3.ZERO, // default
-				width : 25, // default: undefined
-				height : 25 // default: undefined
+				alignedAxis: Cesium.Cartesian3.ZERO, // default
+				width: 25, // default: undefined
+				height: 25 // default: undefined
+			},
+			label: {
+				id: 'my label',
+				show: true,
+				text: locations[i].description,
+				showBackground : true,
+				font : '14px monospace',
+				horizontalOrigin : Cesium.HorizontalOrigin.LEFT,
+				verticalOrigin : Cesium.VerticalOrigin.TOP,
+				pixelOffset : new Cesium.Cartesian2(15, 0)
 			}
 		});
+
+		// var myLabelEntity = viewer.entities.add({
+			
+		// 	position: Cesium.Cartesian3.fromDegrees(locations[i].longitude, locations[i].latitude)
+		// });
 	}
 	viewer.flyTo(pin)
 }
