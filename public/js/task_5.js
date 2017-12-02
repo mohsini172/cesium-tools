@@ -1,6 +1,6 @@
 
 var location_ = {};
-var dataURL = "";
+var dataURL = "./images/default.png";
 location_.longitude = 0;
 location_.latitude = 0;
 

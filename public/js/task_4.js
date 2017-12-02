@@ -1,3 +1,4 @@
+var premitiveTemp = "";
 function task4(event) {
 
 	// $('#info').fadeOut(300);
@@ -13,7 +14,9 @@ function task4(event) {
 	});
 
 	clearScreen(scene);
-
+	if (premitiveTemp != "") {
+		premitiveTemp.destroy();
+	}
 	var cartesian = viewer.camera.pickEllipsoid(mousePosition, ellipsoid);
 	if (cartesian) {
 		var cartographic = ellipsoid.cartesianToCartographic(cartesian);
@@ -36,7 +39,7 @@ function task4(event) {
 
 		});
 		var color = Cesium.Color.fromBytes(154, 205, 50, 110);
-		scene.primitives.add(new Cesium.Primitive({
+		premitiveTemp = scene.primitives.add(new Cesium.Primitive({
 			geometryInstances: new Cesium.GeometryInstance({
 				geometry: new Cesium.RectangleGeometry({
 					rectangle: Cesium.Rectangle.fromDegrees(longitude - 0.01, latitude - 0.01, longitude + 0.01, latitude + 0.01),
@@ -66,7 +69,7 @@ function clearScreen(scene) {
 
 	// Finally, it is safe to remove any remaining primitives, as we can
 	// now be certain they did not belong to any dataSource or entity.
-	scene.primitives.removeAll();
+	// scene.primitives.removeAll();
 }
 
 
