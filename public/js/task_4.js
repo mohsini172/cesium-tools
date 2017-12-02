@@ -30,8 +30,10 @@ function task4(event) {
 		var promise = Cesium.sampleTerrain(terrainProvider, 11, positions);
 		Cesium.when(promise, function (updatedPositions) {
 			var stats = getStats(positions);
-			info_box.innerHTML = "Highest : " + stats.max + "<br>" + "Lowest :<br>" + stats.min + "<br>" + "Average :<br>" + stats.average; 
-			console.log(stats);
+			addPin(stats.redar.lat, stats.redar.long, "Best Position For redar", "./images/default.png");
+			info_box.innerHTML = "<b>Highest : </b><br>" + stats.max + "<br>" + "<b>Lowest :</b><br>" + stats.min + "<br>" + "<b>Average :</b><br>" + stats.average +
+				"<br><b>Radar</b><br>Lat: " + stats.redar.lat + " Long: " + stats.redar.long;
+
 		});
 		var color = Cesium.Color.fromBytes(154, 205, 50, 110);
 		scene.primitives.add(new Cesium.Primitive({
@@ -73,9 +75,13 @@ function getStats(positions) {
 	var min = Number.POSITIVE_INFINITY;
 	var total = 0;
 	var average = 0;
+	var lat = 0;
+	var long = 0;
 	for (var i in positions) {
 		if (positions[i].height > max) {
 			max = positions[i].height;
+			lat = positions[i].latitude;
+			long = positions[i].longitude;
 		}
 
 		if (positions[i].height < min) {
@@ -88,9 +94,13 @@ function getStats(positions) {
 		average = total / (positions.length);
 	}
 	return {
-		min: min,
-		max: max,
-		total: total, 
-		average: average
+		min: min.toFixed(5),
+		max: max.toFixed(5),
+		total: total.toFixed(5),
+		average: average.toFixed(5),
+		redar: {
+			lat: Cesium.Math.toDegrees(lat).toFixed(5),
+			long: Cesium.Math.toDegrees(long).toFixed(5)
+		}
 	}
 }
