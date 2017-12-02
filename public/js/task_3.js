@@ -1,6 +1,6 @@
 function task3(e){
 
-    $('#info_2').fadeOut(300);
+    // $('#info_2').fadeOut(300);
     $("#info").delay(300).fadeIn(300);
 
     var mousePosition = new Cesium.Cartesian2(e.clientX, e.clientY);

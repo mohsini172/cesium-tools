@@ -1,6 +1,6 @@
 function task4(event) {
 
-	$('#info').fadeOut(300);
+	// $('#info').fadeOut(300);
 	$("#info_2").delay(300).fadeIn(300);
 
 	var info_box = document.getElementById("info_2");

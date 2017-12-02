@@ -1,0 +1,256 @@
+@import url(../libs/Widgets/widgets.css);
+@font-face {
+    font-family: "Gentona_Heavy";
+    src: url(../libs/fonts/GentonaW00-Heavy.ttf);
+}
+
+@font-face {
+    font-family: "Gentona_Thin";
+    src: url(../libs/fonts/GentonaW00-Thin.ttf);
+}
+
+@font-face {
+    font-family: "Gentona_Book";
+    src: url(../libs/fonts/GentonaW00-Book.ttf);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#cesiumContainer {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: 0;
+    background-color: #607D8B;
+}
+
+#info {
+    left: 1150px;
+    /* position: fixed; */
+    top: 20px;
+    width: auto;
+    text-align: center;
+    z-index: 1;
+    display: block;
+    pointer-events: none;
+    color: black;
+    font-family: "Gentona_Heavy";
+    background-color: white;
+    padding: 5px 20px;
+    border: 3px solid black;
+    font-size: 15px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -moz-transition: all 0.08s linear;
+    -o-transition: all 0.08s linear;
+    -webkit-transition: all 0.08s linear;
+    transition: all 0.08s linear;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+#info_2 {
+    left: 1150px;
+    /* position: fixed; */
+    top: 20px;
+    width: auto;
+    text-align: center;
+    z-index: 1;
+    display: block;
+    pointer-events: none;
+    color: black;
+    font-family: "Gentona_Heavy";
+    background-color: white;
+    padding: 5px 20px;
+    border: 3px solid black;
+    font-size: 15px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -moz-transition: all 0.08s linear;
+    -o-transition: all 0.08s linear;
+    -webkit-transition: all 0.08s linear;
+    transition: all 0.08s linear;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+#blockbutton, .blockbutton {
+    color: black;
+    font-family: "Gentona_Book";
+    background-color: white;
+    padding: 10px 25px;
+    border: 3px solid black;
+    /* position: fixed; */
+    z-index: 1;
+    /* margin-top: 150px;
+    margin-left: 1200px; */
+    width: 127px;
+    height: 60px;
+    font-size: 15px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#blockbutton:hover,
+#blockbutton:focus,
+#blockbutton:active {
+    background-color: #039BE5 !important;
+    color: white !important;
+    border: 3px solid #003366 !important;
+}
+
+#blockbutton_2 {
+    color: black;
+    font-family: "Gentona_Book";
+    background-color: white;
+    padding: 10px 25px;
+    border: 3px solid black;
+    /* position: fixed; */
+    z-index: 1;
+    /* margin-top: 150px;
+    margin-left: 1200px; */
+    width: 127px;
+    height: 60px;
+    font-size: 15px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#blockbutton_2:hover,
+#blockbutton_2:focus,
+#blockbutton_2:active {
+    background-color: #039BE5 !important;
+    color: white !important;
+    border: 3px solid #003366 !important;
+}
+
+.text-line {
+    background-color: transparent;
+    color: white;
+    outline: none;
+    outline-style: none;
+    /* position: fixed; */
+    /* margin-top: 280px;
+    margin-left: 1080px; */
+    z-index: 1;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid white 2px;
+    padding: 3px 2px;
+    font-family: 'Gentona_Heavy';
+    font-size: 20px;
+}
+
+.text-line_2 {
+    background-color: transparent;
+    color: white;
+    outline: none;
+    outline-style: none;
+    /* position: fixed; */
+    /* margin-top: 330px;
+    margin-left: 1080px; */
+    z-index: 1;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid white 2px;
+    padding: 3px 2px;
+    font-family: 'Gentona_Heavy';
+    font-size: 20px;
+}
+
+#blockbutton_4 {
+    color: black;
+    font-family: "Gentona_Book";
+    background-color: white;
+    padding: 10px 25px;
+    border: 3px solid black;
+    /* position: fixed; */
+    z-index: 1;
+    /* margin-top: 415px;
+    margin-left: 1220px; */
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#blockbutton_4:hover,
+#blockbutton_4:focus,
+#blockbutton_4:active {
+    background-color: #039BE5 !important;
+    color: white !important;
+    border: 3px solid #003366 !important;
+}
+
+#blockbutton_5 {
+    color: black;
+    font-family: "Gentona_Book";
+    background-color: white;
+    padding: 10px 25px;
+    border: 3px solid black;
+    /* position: fixed; */
+    z-index: 1;
+    /* margin-top: 370px;
+    margin-left: 1220px; */
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#blockbutton_5:hover,
+#blockbutton_5:focus,
+#blockbutton_5:active {
+    background-color: #039BE5 !important;
+    color: white !important;
+    border: 3px solid #003366 !important;
+}
+
+
+#task_3, #task_4, #task_5{
+    top: 50px;
+    right: 10px;
+    position: fixed;
+    display: inline-block;
+    z-index: 1;
+}
+
+#task_4, #task_5{
+    display: none;
+}
+
