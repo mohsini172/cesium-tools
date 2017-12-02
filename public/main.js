@@ -34,3 +34,4 @@ function hideAllDivs() {
 	document.getElementById('task_5').style.display = 'none';
 }
 
+addPins();
