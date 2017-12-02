@@ -1,4 +1,8 @@
 function task3(e){
+
+    $('#info_2').fadeOut(300);
+    $("#info").delay(300).fadeIn(300);
+
     var mousePosition = new Cesium.Cartesian2(e.clientX, e.clientY);
  
     var info_box = document.getElementById("info");
@@ -22,18 +26,14 @@ function task3(e){
         Cesium.when(promise, function(updatedPositions) {
             console.log(longitudeString+','+latitudeString+','+positions[0].height);
             info_box.style.display = "block";
-            console.log(e.pageX);
-            console.log(e.pageY);
-            info_box.style.left = e.pageX;
-            info_box.style.top  = e.pageY;
-            info_box.innerHTML = "Longitude : " + longitudeString + "<br>" + "Latitude :<br>" + latitudeString + "<br>" + "Altitude :<br>" + positions[0].height; 
+            info_box.innerHTML = "Longitude : <br>" + longitudeString + "<br>" + "Latitude :<br>" + latitudeString + "<br>" + "Altitude :<br>" + positions[0].height; 
             
             
             // updatedPositions is just a reference to positions.
         });
 
     } else {
-        alert('Globe was not picked');
+        
     }
 	
 };

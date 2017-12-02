@@ -8,7 +8,10 @@
   <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <title>Hello World!</title>
+  <link rel="stylesheet" href="css/animate.css"> 
   <script src="../libs/Cesium.js"></script>
+  <script src="../libs/Sandcastle-header.js"></script>
+  <script src="../libs/jquery.js"></script>
   <style>
       @import url(../libs/Widgets/widgets.css);
 
@@ -63,16 +66,239 @@
   text-transform: uppercase;
 }
 
+ #info_2 {
+            left: 1150px; 
+  position: fixed;
+  top: 20px;
+  width: auto;
+  text-align: center;
+  z-index: 1;
+  display:block;
+    pointer-events: none;
+            color: black;
+            font-family: "Gentona_Heavy";
+            
+            background-color: white;
+            padding: 5px 20px;
+           border: 3px solid black;
+             font-size: 15px;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-transition: all 0.08s linear;
+  -o-transition: all 0.08s linear;
+  -webkit-transition: all 0.08s linear;
+  transition: all 0.08s linear;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+
+#blockbutton{
+            color: black;
+            font-family:"Gentona_Book";
+            background-color: white;
+            padding: 10px 25px;
+           border: 3px solid black;
+           position: fixed;
+           z-index: 1;
+margin-top: 150px;
+margin-left:1200px;
+
+width:127px;
+height: 60px;
+
+             font-size: 15px;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+        }
+        
+#blockbutton:hover,
+#blockbutton:focus,
+#blockbutton:active{
+
+    background-color: #039BE5 !important;
+    color: white !important;
+    border: 3px solid #003366 !important;
+ 
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+#blockbutton_2{
+            color: black;
+            font-family:"Gentona_Book";
+            background-color: white;
+            padding: 10px 25px;
+           border: 3px solid black;
+           position: fixed;
+           z-index: 1;
+margin-top: 210px;
+margin-left:1200px;
+
+width:127px;
+height: 60px;
+
+             font-size: 15px;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+        }
+        
+#blockbutton_2:hover,
+#blockbutton_2:focus,
+#blockbutton_2:active{
+
+    background-color: #039BE5 !important;
+    color: white !important;
+    border: 3px solid #003366 !important;
+ 
+    
+}
+
+.text-line {
+    background-color: transparent;
+    color: white;
+    outline: none;
+    outline-style: none;
+    position: fixed;
+    margin-top: 280px;
+    margin-left:1080px;
+    z-index: 1;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid white 2px;
+    padding: 3px 2px;
+    font-family: 'Gentona_Heavy';
+    font-size: 20px;
+}
+
+.text-line_2 {
+    background-color: transparent;
+    color: white;
+    outline: none;
+    outline-style: none;
+    position: fixed;
+    margin-top:330px;
+    margin-left:1080px;
+    z-index: 1;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid white 2px;
+    padding: 3px 2px;
+    font-family: 'Gentona_Heavy';
+    font-size: 20px;
+}
+
+#blockbutton_4{
+            color: black;
+            font-family:"Gentona_Book";
+            background-color: white;
+            padding: 10px 25px;
+           border: 3px solid black;
+           position: fixed;
+           z-index: 1;
+margin-top: 415px;
+margin-left:1220px;
+
+width:100px;
+height: 40px;
+
+             font-size: 15px;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+        }
+        
+#blockbutton_4:hover,
+#blockbutton_4:focus,
+#blockbutton_4:active{
+
+    background-color: #039BE5 !important;
+    color: white !important;
+    border: 3px solid #003366 !important;
+ 
+    
+}
+
+#blockbutton_5{
+            color: black;
+            font-family:"Gentona_Book";
+            background-color: white;
+            padding: 10px 25px;
+           border: 3px solid black;
+           position: fixed;
+           z-index: 1;
+margin-top: 370px;
+margin-left:1220px;
+
+width:100px;
+height: 40px;
+
+             font-size: 15px;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+        }
+        
+#blockbutton_5:hover,
+#blockbutton_5:focus,
+#blockbutton_5:active{
+
+    background-color: #039BE5 !important;
+    color: white !important;
+    border: 3px solid #003366 !important;
+ 
+    
+}
+
   </style>
 </head>
 <body>
-  <div style="position:abosulute; left:0px;top:0px;" id = "exploration_button">
-    <button onclick = "changeTask(task4)">Exploration Mode</button>
-  </div>
-  <div id="info">Longitude : <br> Latitude : <br> Altitude : </div>
+  <button onclick = "changeTask(task4)" id="blockbutton">Exploration<br>Mode</button>
+  <button onclick = "changeTask(task3)" id="blockbutton_2">Current<br>Position</button>
+  <div id="info" style="font-family:'Gentona_Book'" class="animated fadeInDown">Longitude : <br>Click to display <br> Latitude : <br>Click to display <br> Altitude : <br> Click to display</div>
+
+  <div id="info_2" style="font-family:'Gentona_Book';display: none;" class="animated fadeInDown">Highest : <br>Click to display <br> Lowest : <br>Click to display <br> Average : <br> Click to display</div>
+
+  <input type="text" class="text-line" id="longitude" />
+  <input type="text" class="text-line_2" id="latitude" />
+  <button onclick = "store()" id="blockbutton_5">Store</button>
+  <button onclick = "travel()" id="blockbutton_4">Go!</button>
+  <p style="z-index:1;position:fixed;margin-top:470px;margin-left:1100px;color:white;font-size:25px;font-family:'Gentona_Heavy'" id="dest_count">Destinations Set : </p>
+
   <div id="cesiumContainer"></div>
   <script src="./js/task_4.js"></script>
   <script src="./js/task_3.js"></script>
+  <script src="./js/task_5.js"></script>
   <script src="./main.js"></script>
 </body>
 </html>

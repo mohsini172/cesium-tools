@@ -1,4 +1,10 @@
 function task4(event) {
+
+	$('#info').fadeOut(300);
+	$("#info_2").delay(300).fadeIn(300);
+
+	var info_box = document.getElementById("info_2");
+
 	var mousePosition = new Cesium.Cartesian2(event.clientX, event.clientY);
 	var ellipsoid = viewer.scene.globe.ellipsoid;
 	var scene = viewer.scene;
@@ -24,6 +30,7 @@ function task4(event) {
 		var promise = Cesium.sampleTerrain(terrainProvider, 11, positions);
 		Cesium.when(promise, function (updatedPositions) {
 			var stats = getStats(positions);
+			info_box.innerHTML = "Highest : " + stats.max + "<br>" + "Lowest :<br>" + stats.min + "<br>" + "Average :<br>" + stats.average; 
 			console.log(stats);
 		});
 		var color = Cesium.Color.fromBytes(154, 205, 50, 110);
